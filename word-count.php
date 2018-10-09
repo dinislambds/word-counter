@@ -11,9 +11,12 @@ Text Domain: word-count
 Domain Path: /languages/
 */
 
-/* function wordcount_plugin_activation(){}
+/* 
+// When user is activating the plugin
+function wordcount_plugin_activation(){}
 register_activation_hook( __FILE__, "wordcount_plugin_activation" );
 
+// When user is deactivating the plugin
 function wordcount_plugin_deactivation(){}
 register_deactivation_hook( __FILE__, "wordcount_plugin_deactivation" ); */
 
