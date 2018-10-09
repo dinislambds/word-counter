@@ -26,7 +26,12 @@ function wordcount_word_count_callback( $content ){
     $content_stripped = strip_tags ( $content );
     $count_words = str_word_count ( $content_stripped );
     $label = __( "Total word number is: ", "word-count" );
-    $content .= sprintf ( '<h2>%s %s</h2>', $label, $count_words );
+
+    // apply_filters for user so they can edit/change later
+    $label = apply_filters( "wordcount_filters_for_label", $label );
+    $tag = apply_filters( "wordcount_tag", h2 );
+    
+    $content .= sprintf ( "<%s>%s %s</%s>", $tag, $label, $count_words, $tag );
 
     return $content;
 }
