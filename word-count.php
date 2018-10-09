@@ -29,8 +29,8 @@ function wordcount_word_count_callback( $content ){
 
     // apply_filters for user so they can edit/change later
     $label = apply_filters( "wordcount_filters_for_label", $label );
-    $tag = apply_filters( "wordcount_tag", h2 );
-    
+    $tag = apply_filters( "wordcount_tag", "h2" );
+
     $content .= sprintf ( "<%s>%s %s</%s>", $tag, $label, $count_words, $tag );
 
     return $content;
